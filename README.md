@@ -1,7 +1,7 @@
 # SharedObjects
 Simple Unity package to get started with the Scriptable Object architecture as described in Ryan Hipple's 2017 Unite talk on the subject
 
-Package was made for testing / fun. Do not expect updates :)
+Package was made for testing / fun. Do not expect frequent updates :)
 
 Resources:
 Ryan Hipple's Unite talk: https://www.youtube.com/watch?v=raQ3iHhE_Kk
