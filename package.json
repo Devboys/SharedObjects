@@ -1,0 +1,15 @@
+{
+	"name": "com.devboys.shared-object-architecture",
+	"version": "1.0.0",
+	"displayName": "SharedObjects",
+	"description": "Simple package to get started with the scriptable object architecture as outlined in this video: https://youtu.be/raQ3iHhE_Kk ",
+	"unityVersion": "2019.4",
+	"dependencies": {
+	},
+	"keywords": ["scriptableobject", "architecture", "devboys"],
+	"author": {
+		"name": "Jeppe Faber",
+		"email": "jeppestougaardfaber@gmail.com",
+		"url": ""
+	}
+}

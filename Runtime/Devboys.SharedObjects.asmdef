@@ -1,0 +1,15 @@
+{
+    "name": "Devboys.SharedObjects",
+    "references": [
+        "GUID:ff5b4804cbae4f54d83fe0ca86aadadd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
