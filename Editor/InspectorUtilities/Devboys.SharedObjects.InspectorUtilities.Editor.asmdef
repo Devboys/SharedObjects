@@ -1,9 +1,11 @@
 {
-    "name": "Devboys.SharedObjects",
+    "name": "Devboys.SharedObjects.InspectorUtilities.Editor",
     "references": [
         "GUID:b12f71e77ff547b479241c6956b76ad6"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
