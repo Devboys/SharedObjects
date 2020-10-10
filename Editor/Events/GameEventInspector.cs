@@ -18,7 +18,7 @@ namespace Devboys.SharedObjects.EditorObjects
             GUILayout.Space(10); //10px space.
             if (GUILayout.Button("Raise Event"))
             {
-      
+                gameEvent.Raise();
             }
         }
     }
