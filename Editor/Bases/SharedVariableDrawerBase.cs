@@ -5,19 +5,26 @@ using UnityEditor;
 using Devboys.SharedObjects.Variables;
 
 namespace Devboys.SharedObjects.EditorObjects {
-    public abstract class SharedVariableDrawerBase<T> : PropertyDrawer
+    public abstract class SharedVariableDrawerBase<T1, T2> : PropertyDrawer where T2: SharedNumericVariableBase<T1>
     {
         private static readonly float ValuePreviewWidth = 50;
         private static readonly float ValuePreviewSpacing = 2;
         private static readonly float EdgeSpacing = 5; //seems to be unity standard inspector edge spacing.
 
+        public override bool CanCacheInspectorGUI(SerializedProperty property)
+        {
+            return false;
+        }
+
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             return base.GetPropertyHeight(property, label);
+            
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+
             label = EditorGUI.BeginProperty(position, label, property);
 
             position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
@@ -32,18 +39,19 @@ namespace Devboys.SharedObjects.EditorObjects {
                 valuePos.x = Screen.width - ValuePreviewWidth - EdgeSpacing;
                 valuePos.width = ValuePreviewWidth;
 
-                SharedNumericVariableBase<T> targetVariable = (SharedNumericVariableBase<T>)property.objectReferenceValue;
+                SharedNumericVariableBase<T1> targetVariable = (SharedNumericVariableBase<T1>)property.objectReferenceValue;
                 GUI.enabled = false;
                 DrawPreviewField(valuePos, targetVariable.CurrentValue);
                 GUI.enabled = true;
             }
 
 
-            property.objectReferenceValue = EditorGUI.ObjectField(position, property.objectReferenceValue, typeof(FloatVariable), false);
+            property.objectReferenceValue = EditorGUI.ObjectField(position, property.objectReferenceValue, typeof(T2), false);
 
             EditorGUI.EndProperty();
         }
 
-        public abstract void DrawPreviewField(Rect position, T currentVariableValue);
+        public abstract void DrawPreviewField(Rect position, T1 currentVariableValue);
+
     }
 }
